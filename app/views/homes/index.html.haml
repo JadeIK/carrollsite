@@ -1,0 +1,17 @@
+.navbar
+	.navbar-inverse.navbar-fixed-top
+		.container
+			- if user_signed_in?
+				= current_user.email
+				%br 
+				= link_to 'Log Out', sign_out_path
+.container 	
+	.starter-template			
+		.home-login
+			%h1 Welcome to Carrollsite CMS
+
+			.login
+				= render new_user_session_path
+			.OR			
+			.registration
+				= render new_user_registration_path
